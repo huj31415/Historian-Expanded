@@ -3,7 +3,7 @@
 Chooses one of several formatted TEXT values to display based on the currently focussed vessels status.  This is useful for making more descriptive captions such as: `Preparing to launch from <LaunchSite>` or `Landed on <Body>'s <LandingZone>` or `Flying at Mach <Mach> (<Speed>) <Altitude> over <Body>'s <Biome>`.
 
 ## Properties
-This element shares all of the properties of the `TEXT` element except for the `Text` property.
+This element shares all of the properties of the [`TEXT`](Text.md) element except for the `Text` property.
 
 * `EvaOnly` Should this element be displayed only when there is a Kerbal on EVA. Possible values: True, False, Either. __Default__: Either
 
