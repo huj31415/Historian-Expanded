@@ -9,21 +9,21 @@ A `TEXT` element renders a string of text. The text may contain [Unity formattin
 * `FontStyle` Style of the font. Supports any one of these values: `Normal`, `Bold`, `Italic`, and `BoldAndItalic`. Note that rich text format specifiers can override this. _Default: Normal_
 * `Color` Color of the font. Note that rich text format specifiers can override this. _Default: 1.0,1.0,1.0,1.0_
 * `TRAIT` a block level property defining how to display crew information for a specific type of crew member (e.g. Pilot)
-    Example:
-	TRAIT
-	{
-		Name = Pilot // the name of the trait from the game's config files
-		Label = (P) // optional label to display after crew member's name
-		Color = red 
-	}
+    Example:  
+	`TRAIT`  
+	`{`  
+	`	Name = Pilot // the name of the trait from the game's config files`  
+	`	Label = (P) // optional label to display after crew member's name`  
+	`	Color = red`  
+	`}`  
 	See [Traits.md](Traits.md) for more details
-* `TRAITDEFINITIONS` the name of a file inside the layouts folder that contains a list of `TRAIT` blocks (allows easily defining same settings for multiple TEXT type elements) _Example: TRAITDEFINITIONS = colored.traitsconfig_. See [Traits.md](Traits.md) for more details
+* `TRAITDEFINITIONS` the name of a file inside the layouts folder that contains a list of `TRAIT` blocks (allows easily defining same settings for multiple TEXT type elements) _Example: TRAITDEFINITIONS = colored.traitsconfig_. (See [Traits.md](Traits.md) for more details)
 * `BaseYear` Offset added to year values and formatted dates. _Default: 1 (Kerbin CalendarMode) or 1951 (Earth CalendarMode)_
 
 ### Deprecated properties
 
-* `DateFormat` A C# format string for the <Date> element. Example: `dd/MM/yyyy` for UK style short date. _Default: CurrentCulture.LongDatePattern_
-* `PilotColor` Unity richtext color to apply to pilot names in <Crew> or <CrewShort> elements. _Default: clear_
+* `DateFormat` A C# format string for the <Date> element. Example: `dd/MM/yyyy` for UK style short date. _Default: CurrentCulture.LongDatePattern_ (See [Date amd Time Specific Tags](Tags-Dates.md) for more information on current syntax)
+* `PilotColor` Unity richtext color to apply to pilot names in <Crew> or <CrewShort> elements. _Default: clear_ (See [The Crew Tag](Tags-Crew.md) for more information)
 * `EngineerColor` Unity richtext color to apply to engineer names in <Crew> or <CrewShort> elements. _Default: clear_
 * `ScientistColor` Unity richtext color to apply to scientist names in <Crew> or <CrewShort> elements. _Default: clear_
 * `TouristColor` Unity richtext color to apply to tourist names in <Crew> or <CrewShort> elements. _Default: clear_
