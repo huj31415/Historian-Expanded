@@ -17,6 +17,8 @@
 
 † Note for Earth calendar dates the game calculates the clock date using fixed 365 day years taking no account of leap years. [Kerbal Alarm Clock](http://forum.kerbalspaceprogram.com/index.php?/topic/22809-11x-kerbal-alarm-clock-v3610-april-25/) and [RSS Date Time Formatter](http://forum.kerbalspaceprogram.com/index.php?/topic/139335-ksp-112-rss-datetime-formatter-v10/) calculates based on seconds since start date and takes account of leap years. [RSS](http://forum.kerbalspaceprogram.com/index.php?/topic/50471-112-real-solar-system-v1110-may-1/) only shows the planets in the correct relative locations for an historical date if leap years are accounted for. The different `<Date>` and `<DateKAC>` tags allow you to choose which of these calendar schemes you wish to use.
 
+`format` parameters can accept any .NET [standard](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) or [custom](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) date time string.
+
 
 --
 ### [Documentation Index](../README.md)
