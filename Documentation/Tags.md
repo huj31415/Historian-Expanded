@@ -14,7 +14,7 @@ Tags marked with a # will show localized values. Tag names are __NOT__ localised
 * `<Vessel>` Name of the active vessel or Kerbal. Example: _Jebediah Kerman_, _Kerbal X_
 * `<VesselType>` # the type of the current vessel. Will be one of `Base`, `Debris`, `EVA`, `Flag`, `Lander`, `Probe`, `Rover`, `Ship`, `SpaceObject`, `Station`, `Plane`, `Relay`, `Unknown` 
 * `<Target>` # Name of currently targeted vessel or body (if any) 
-* `<Crew>` # Name of all the crew members, separated by commas, on the active vessel (Only available in Flight Mode). If the vessel is a probe, it will display "Unmanned". If the vessel is space debris, it will display "N/A". Example: _Jebediah Kerman, Bill Kerman_
+* `<Crew(isList, isShort, showSuffix, traits)>` # Name of all the crew members, separated by commas, on the active vessel (Only available in Flight Mode). If the vessel is a probe, it will display "Unmanned". If the vessel is space debris, it will display "N/A". [More info](Tags-Crew.md). Example: _Jebediah Kerman, Bill Kerman_
 * `<StageNumber>` The number of the currently active stage. This will be the same as the number displayed in the staging controls at the bottom left of the flight screen UI.
 
 ### Location
@@ -44,6 +44,9 @@ Tags marked with a # will show localized values. Tag names are __NOT__ localised
 * `<SrfSpeed>` alias for `<Speed>`
 * `<OrbSpeed>` orbital speed of the active vessel in the most appropriate unit (only available in flight mode). The unit is also included.
 
+### Date and time
+* See [Date and Time Related Tags](Tags-Dates.md)
+
 ### Other
 * `<Heading>` The current compass heading of the active vessel (Only available in Flight Mode).
 
@@ -51,7 +54,7 @@ Tags marked with a # will show localized values. Tag names are __NOT__ localised
 The following tags are also available mainly for debug purposes or when developing layouts:
 
 * `<ListFonts>` A (long) comma separated list of the official names of all fonts installed in your OS. For use in identifying the correct name to use with the `Font` property.
-* `<LastAction>` The last recognised action. See `ACTION_TEXT` below.
+* `<LastAction>` The last recognised action. See [`ACTION_TEXT`](Action_Text.md).
 * `<EvaState>` The current animation state of an EVA Kerbal.
 
 ### Third party mod integration
