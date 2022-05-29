@@ -4,7 +4,7 @@
 
 ## `Name`
 
-Declare a name to identify the element. Used by [INHERIT](Inherit.md) elements when creating merged layouts. All the names used in a layout (or set of inherited layouts) must be unique.
+Declare a name to identify the element. Used by [`INHERIT`](Inherit.md) elements when creating merged layouts. All the names used in a layout (or set of inherited layouts) must be unique.
 
 _Example: `Name = BigPicture`_
 
@@ -16,13 +16,13 @@ Defines the position of the element relative to the top left of the screen.
 
 ![](position.png)
 
-_Example: `Position = 
+_Example: `Position = 0.3,0.3`
 
 __If omitted then the default value of 0.0, 0.0 is used__
 
 ## `Size`
 
-The width and height relative as fractions of total width and height.
+The relative width and height as fractions of total width and height.
 
 ![](size.png)
 
@@ -34,7 +34,7 @@ The origin point of the element expressed relative to itself. This is the point 
 
 ![](anchor.png)
 
-__If omitted then the default value of 0.0, 0.0 is used__
+__If omitted then the default value of 0.0, 0.0 is used pinning the top left corner to the specified position__
 
 
 --
