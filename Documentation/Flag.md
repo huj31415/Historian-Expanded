@@ -1,6 +1,6 @@
 # Flag Element
 
-A `FLAG` element can be used to render the current mission's flag onto the screen. It behaves very much like a `PICTURE` otherwise.
+A `FLAG` element can be used to render the current mission's flag onto the screen. It behaves very much like a [`PICTURE`](Picture.md) otherwise.
 
 * `DefaultTexture` Path to a default image file to show if no flag can be determined for the active vessel, or if there is no active vessel. Example: `Squad/Flags/default`
 * `BackgroundTexture` Optional path to a image file to show as background behind transparent flags. Default is none. Example: `Squad/Flags/Minimalistic`
