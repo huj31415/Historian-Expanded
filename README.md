@@ -2,7 +2,7 @@
 
 Historian is a screenshot utility mod for Kerbal Space Program that adds fully configurable and dynamic captions and overlay graphics to screenshots to better describe the context of screenshots and record your Kerbal adventures.
 
-Orignal mod by [Zenobit](https://github.com/Zeenobit/). Extended development version by Aelfhe1m, some fixes by huj31415
+Orignal mod by [Zenobit](https://github.com/Zeenobit/). Extended development version by [Aelfhe1m](https://github.com/Aelfhe1m/), some fixes by huj31415
 
 ## Installation
 
