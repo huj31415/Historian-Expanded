@@ -365,9 +365,9 @@ namespace KSEA.Historian
                     Print($"Layout with name '{layoutName}' already exists. Unable to load duplicate.");
                 }
             }
-            catch
+            catch (Exception e)
             {
-                Print($"Failed to load layout '{layoutName}'.");
+                Print($"Failed to load layout '{layoutName}': '{e}'.");
             }
         }
 

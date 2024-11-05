@@ -75,6 +75,7 @@ namespace KSEA.Historian
             for (int i = 0; i < nodes.Length; i++)
             {
                 var name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nodes[i].GetString("Name", "?").ToLower());
+                //Historian.Print($"{name}");
                 var suffix = "(" + name.Substring(0, 1) + ")";
 
                 if (traits.ContainsKey(name))

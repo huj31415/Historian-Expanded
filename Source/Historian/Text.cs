@@ -16,12 +16,14 @@
  **/
 
 using KSP.Localization;
+using PreFlightTests;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using static Targeting;
 
 namespace KSEA.Historian
 {
@@ -754,8 +756,12 @@ namespace KSEA.Historian
             var crewCount = 0;
             var crew = vessel.GetVesselCrew();
             TraitInfo trait;
+            var cfg = Historian.Instance.GetConfiguration();
+            int maxDisplayCrew = cfg.MaxDisplayCrew;
+            var nIter = Math.Min(maxDisplayCrew, crew.Count);
+            int truncated = crew.Count - nIter;
 
-            for (int i = 0; i < crew.Count; i++)
+            for (int i = 0; i < nIter; i++)
             {
                 var crewMember = crew[i];
                 // allow filter to be either singular or plural
@@ -764,10 +770,15 @@ namespace KSEA.Historian
                     crewCount++;
                     if (isList)
                         result.Append("• ");
-                    else
+                    else if (crewCount > 1)
                     {
-                        if (crewCount > 1)
+                        if (nIter > 2 || truncated > 0) //crew.Count>2
                             result.Append(", ");
+                        else
+                            result.Append(" ");
+
+                        if (crewCount == crew.Count && truncated == 0)
+                            result.Append("and ");
                     }
 
                     trait = traitsInfo["Unknown"];
@@ -776,7 +787,7 @@ namespace KSEA.Historian
 
                     result.AppendTraitColor(trait.Name, traitsInfo);
                     if (isShort)
-                        result.Append(crewMember.name.Replace(Internationalisation.Kerman , ""));
+                        result.Append(crewMember.name.Replace($" {Internationalisation.Kerman}" , ""));
                     else
                         result.Append(crewMember.name);
 
@@ -790,7 +801,7 @@ namespace KSEA.Historian
             }
             if (crewCount == 0)
             {
-                var cfg = Historian.Instance.GetConfiguration();
+                //var cfg = Historian.Instance.GetConfiguration();
                 result.Append(isSingleTrait ? cfg.DefaultNoCrewLabel : cfg.DefaultUnmannedLabel);
             }
             else
@@ -798,9 +809,15 @@ namespace KSEA.Historian
                 {
                     if (isSingleTrait)
                         result.AppendTraitColor(traitsFilter[0], traitsInfo).Append($" {Internationalisation.Kerman }</color>");
-                    else
+                    else if (truncated == 0)
                         result.Append(" ").Append(Internationalisation.Kerman);
                 }
+
+            if (truncated > 0)
+            {
+                //if (nIter > 1) result.Append(",");
+                result.Append($" and {truncated} more");
+            }
 
         }
 

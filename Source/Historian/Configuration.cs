@@ -46,10 +46,11 @@ namespace KSEA.Historian
             TimeToRememberLastAction = 2000, // 2000ms = 2s
             DefaultSpaceCenterName = Localizer.GetStringByTag("#autoLOC_300900"), // #autoLOC_300900 = KSC
             KerbinMonthNames = new string[] { "Unnam", "Dosnam", "Trenam", "Cuatnam", "Cinqnam", "Seinam", "Sietnam", "Ocnam", "Nuevnam", "Diznam", "Oncnam", "Docenam" },
-            KerbinDayNames = new string[] { "Akant", "Brant", "Casant", "Dovant", "Esant", "Flant" },
+            KerbinDayNames = new string[] { "Akant", "Brant", "Casant", "Dovant", "Esant", "Flant", "Placeholder" },
             RightClickAction = RightClickAction.Suppress,
             DefaultNoCrewLabel = Localizer.GetStringByTag("#autoLOC_258911"), // #autoLOC_258911 = none
-            DefaultUnmannedLabel = Localizer.GetStringByTag("#autoLOC_286382") // #autoLOC_286382 = unmanned
+            DefaultUnmannedLabel = Localizer.GetStringByTag("#autoLOC_286382"), // #autoLOC_286382 = unmanned
+            MaxDisplayCrew = 5 // added
         };
 
         public Configuration(bool fromDefaults = false)
@@ -71,6 +72,7 @@ namespace KSEA.Historian
                 this.RightClickAction = Defaults.RightClickAction;
                 this.DefaultNoCrewLabel = Defaults.DefaultNoCrewLabel;
                 this.DefaultUnmannedLabel = Defaults.DefaultUnmannedLabel;
+                this.MaxDisplayCrew = Defaults.MaxDisplayCrew;
             }
         }
         
@@ -97,6 +99,8 @@ namespace KSEA.Historian
         public string DefaultNoCrewLabel { get; set; }
 
         public string DefaultUnmannedLabel { get; set; }
+
+        public int MaxDisplayCrew { get; set; }
 
         public string[] KerbinMonthNames;
         public string[] KerbinDayNames;
@@ -140,6 +144,8 @@ namespace KSEA.Historian
                     = node.GetString("DefaultNoCrewLabel", Defaults.DefaultNoCrewLabel);
                 configuration.DefaultUnmannedLabel
                     = node.GetString("DefaultUnmannedLabel", Defaults.DefaultUnmannedLabel);
+                configuration.MaxDisplayCrew
+                    = node.GetInteger("MaxDisplayCrew", Defaults.MaxDisplayCrew);
 
                 if (!String.IsNullOrEmpty(configuration.CustomText))
                     configuration.TokenizedCustomText = Parser.GetTokens(configuration.CustomText);
@@ -197,6 +203,7 @@ namespace KSEA.Historian
                 node.AddValue("RightClickAction", RightClickAction);
                 node.AddValue("DefaultNoCrewLabel", DefaultNoCrewLabel);
                 node.AddValue("DefaultUnmannedLabel", DefaultUnmannedLabel);
+                node.AddValue("MaxDisplayCrew", MaxDisplayCrew);
 
                 if (File.Exists(file))
                     File.Delete(file);

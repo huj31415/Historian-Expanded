@@ -36,7 +36,7 @@ namespace KSEA.Historian
 
         public static int KerbinDayOfMonth(this int dayNumber) => dayNumber - FirstDayOfMonth[KerbinMonth(dayNumber) - 1] + 1;
 
-        public static int KerbinDayOfWeek(this int dayNumber) => ((dayNumber - 1) % 6) + 1;
+        public static int KerbinDayOfWeek(this int dayNumber) => ((dayNumber - 1) % 7) + 1;
 
         internal static int ParseRepeatPattern(String format, int pos, char patternChar)
         {
@@ -104,6 +104,7 @@ namespace KSEA.Historian
                         else
                         {
                             int dayOfWeek = kerbinDay.KerbinDayOfWeek();
+                            //Historian.Print($"DOW:{dayOfWeek}, TL:{tokenLen}");
                             result.Append(FormatDayOfWeek(dayOfWeek, tokenLen));
                         }
                         break;
@@ -167,7 +168,7 @@ namespace KSEA.Historian
 
         static string FormatDayOfWeek(int dayOfWeek, int tokenLen)
         {
-            //var config = Historian.Instance.GetConfiguration();
+            var config = Historian.Instance.GetConfiguration();
             switch (tokenLen)
             {
                 case 3:

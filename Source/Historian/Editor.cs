@@ -191,7 +191,7 @@ namespace KSEA.Historian
                         }
                     }
 
-                    GUILayout.Space(50);
+                    GUILayout.Space(20);
                     GUILayout.Label(Localizer.GetStringByTag("#Historian_DefaultEmptyCrewSlot"));
                     GUILayout.Space(10);
                     using (var noCrewLabel = new GUILayout.HorizontalScope())
@@ -205,6 +205,16 @@ namespace KSEA.Historian
                         GUILayout.Label(Localizer.GetStringByTag("#Historian_UncrewedLabel"));
                         GUILayout.FlexibleSpace();
                         configuration.DefaultUnmannedLabel = GUILayout.TextField(configuration.DefaultUnmannedLabel, GUI.skin.textArea, GUILayout.Width(120));
+                    }
+
+                    GUILayout.Space(20);
+                    GUILayout.Label("Max crew display count:");
+                    GUILayout.Space(10);
+                    using (var item = new GUILayout.HorizontalScope())
+                    {
+                        GUILayout.Label("Max crew to display");
+                        GUILayout.FlexibleSpace();
+                        configuration.MaxDisplayCrew = (int)GUILayout.HorizontalSlider(configuration.MaxDisplayCrew, 1, 20, GUILayout.Width(120));
                     }
 
                 }
