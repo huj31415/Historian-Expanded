@@ -1,9 +1,10 @@
 # Changelog
 
-### 1.3.3 for KSP 1.21.5
+### 1.3.3 for KSP 1.12.5
 * Add a crew list truncation option for large crew counts
 * Change week length to 7 days
 * Update default layout to a custom version of u/mikusingularity's layout
+* Update configurations
 
 ### 1.3.2 for KSP 1.3.1
 * Fix version file URL link and make copy of file in old location to prompt legacy users to update
