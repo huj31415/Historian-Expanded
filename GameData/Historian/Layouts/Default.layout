@@ -1,32 +1,83 @@
 KSEA_HISTORIAN_LAYOUT
 {
 	Name = Default
-	
+
 	RECTANGLE
 	{
-		Anchor = 0.0,0.5
-		Size = 1.0,0.15
-		Position = 0.0,0.85
-		Color = 0.0,0.0,0.0,0.5
+		// lower panel
+		Name = BackgroundPanel
+		Anchor = 0.0,1.0
+		Size = 1.0,0.0541
+		Position = 0.0,1.0
+		Color = 0.0,0.0,0.0,0.39
 	}
-
+ 
 	FLAG
 	{
-		Anchor = 0.5,0.5
-		Position = 0.1,0.85
-		Scale = 1,1
-		DefaultTexture = Squad/Flags/default
+		Name = SmallFlag
+		Anchor = 0.0,1.0
+		Position = 0.0,1.0
+		Scale = 0.185,0.225
+		DefaultTexture = Squad/Flags/Default // replace with your flag
 	}
-
+ 
+	TEXT 
+	{
+		Anchor = 0.0,1.0
+		Position = 0.055,0.9735
+		Size = 1.0,0.027
+		TextAnchor = MiddleLeft
+		FontSize = 16
+ 
+		Font = Century Gothic
+		Text = <b><Vessel></b>, <CrewShort>
+	}
+ 
+	SITUATION_TEXT
+	{
+		Anchor = 0.0,1.0
+		Position = 0.055,0.9935
+		Size = 1.0,0.027
+		Color = 1.0,1.0,1.0,1.0
+		TextAnchor = MiddleLeft
+		FontSize = 16
+ 
+		Font = Century Gothic
+		Default =
+		Landed = Landed in the <Biome> | <Altitude>
+		Splashed = Splashed down on <Body>
+		Prelaunch = Standing by to launch from <LandingZone> // replace with specific space center
+		Flying = <Altitude>, <Speed> (Mach <Mach>), Hdg: <Heading>°, Ap: <Ap>
+		SubOrbital = Sub-orbital | <Altitude>, <Speed>, Ap: <Ap>, Inc: <Inc>
+		Orbiting = <Orbit> | <Altitude>, <OrbSpeed>, Inc: <Inc>
+		Escaping = Hyperbolic | <Altitude>, <OrbSpeed>, Pe: <Pe>, Inc: <Inc>
+		Docked = Docked
+	}
+ 
 	TEXT
 	{
-		Anchor = 0.0,0.5
-		Position = 0.25,0.85
-		Size = 0.5,0.125
+		Anchor = 0.0,1.0
+		Position = -0.015,0.9735
+		Size = 1.0,0.027
 		Color = 1.0,1.0,1.0,1.0
-		Text = <size=22><b><Vessel></b></size><N><size=8><N></size><b><UT></b> (<T+>)<N><size=12><Situation> @ <Body> (<Biome>)<N><Custom></size>
-		TextAnchor = MiddleLeft
-		FontSize = 12
-		FontStyle = Normal
+		TextAnchor = MiddleRight
+		FontSize = 16
+		Font = Century Gothic
+ 
+		DateFormat = dddd //yyyy-MM-dd (dddd) HH:mm:ss
+		Text = <b><Body></b> | <LatitudeDMS>, <LongitudeDMS> // <b>Kerbal Space Program</b> // replace with your text
+	}
+ 
+	TEXT
+	{
+		Anchor = 0.0,1.0
+		Position = -0.015,0.9935
+		Size = 1.0,0.027
+		Color = 1.0,1.0,1.0,1.0
+		TextAnchor = MiddleRight
+		FontSize = 16
+		Font = Century Gothic
+		DateFormat = dddd
+		Text = <UT> (<DateKAC>) | T+<T+>
 	}
 }

@@ -2,17 +2,17 @@
 
 Historian is a screenshot utility mod for Kerbal Space Program that adds fully configurable and dynamic captions and overlay graphics to screenshots to better describe the context of screenshots and record your Kerbal adventures.
 
-Orignal mod by [Zenobit](https://github.com/Zeenobit/). Extended development version by Aelfhe1m
+Orignal mod by [Zenobit](https://github.com/Zeenobit/). Extended development version by Aelfhe1m, some fixes by huj31415
 
 ## Installation
 
 ### New installation
-1. Download the latest version of Historian from [GitHub](https://github.com/Aelfhe1m/Historian-Expanded/releases).
+1. Download the latest version of Historian from [GitHub](https://github.com/huj31415/Historian-Expanded/releases).
 2. Extract the archive and merge the `GameData/Historian` folder into your KSP installation's `GameData` folder.
 3. Enjoy!
 
 ### Upgrading from Historian version 1.2.8 or earlier
-1. Download the latest version of Historian from [GitHub](https://github.com/Aelfhe1m/Historian-Expanded/releases).
+1. Download the latest version of Historian from [GitHub](https://github.com/huj31415/Historian-Expanded/releases).
 2. Backup any custom layout files from your `GameData/KSEA/Historian/Layouts` folder (and optionally your `GameData/Historian/Plugins/Plugindata/Historian.cfg` settings file)
 3. **Delete the `GameData\KSEA` folder**
 4. Extract the archive and merge the `GameData/Historian` folder into your KSP installation's `GameData` folder.
